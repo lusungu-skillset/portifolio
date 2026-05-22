@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Services from "./components/Services";
 import Experiences from "./components/Experience";
 import Skills from "./components/Skills";
+import Certifications from "./components/Certifications";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import DownloadCVButton from "./components/DownloadCVButton";
@@ -50,13 +51,14 @@ const App = () => {
           className={isLightMode ? 'bg-white' : 'bg-gray-900'}
         >
           <div className={`${isLightMode ? 'bg-gray-50 text-gray-900' : 'bg-grid text-white'} min-h-screen relative z-10`}>
-            <Nav />
-            <Hero />
-            <Education />
+            <Nav isLightMode={isLightMode} />
+            <Hero isLightMode={isLightMode} />
+            <Education isLightMode={isLightMode} />
             <Services isLightMode={isLightMode} /> 
-            <Experiences />
+            <Experiences isLightMode={isLightMode} />
             <Skills isLightMode={isLightMode} />
-            <Projects />
+            <Certifications isLightMode={isLightMode} />
+            <Projects isLightMode={isLightMode} />
             <Contact isLightMode={isLightMode} />
           </div>
         </motion.div>

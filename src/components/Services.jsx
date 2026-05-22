@@ -50,7 +50,7 @@ export default function Services({ isLightMode }) {
       <h2
         id="Services"
         className={`text-2xl sm:text-3xl md:text-4xl lg:text-3xl font-bold text-center mb-8 md:mb-12 ${
-          isLightMode ? 'text-neutral-50' : 'text-neutral-50'
+          isLightMode ? 'text-gray-900' : 'text-neutral-50'
         }`}
       >
         Services

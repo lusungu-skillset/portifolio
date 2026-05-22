@@ -24,15 +24,31 @@ import COLL from "/src/assets/images/collab.png";
 import PB from "/src/assets/images/problem.png";
 import PN from "/src/assets/images/planning.png";
 
+const DHIS2Icon = (
+  <svg viewBox="0 0 24 24" className="w-12 h-12 md:w-10 md:h-10 fill-none stroke-blue-400 hover:stroke-blue-300 stroke-[1.5]" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10" />
+    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+    <path d="M2 12h20" />
+  </svg>
+);
+
+const PowerBIIcon = (
+  <svg viewBox="0 0 24 24" className="w-12 h-12 md:w-10 md:h-10 fill-amber-500 hover:fill-amber-400" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="14" width="4" height="8" rx="0.5" />
+    <rect x="9" y="8" width="4" height="14" rx="0.5" />
+    <rect x="16" y="2" width="4" height="20" rx="0.5" />
+  </svg>
+);
+
 export default function Skills({ isLightMode }) {
   return (
     <section className="lg:mt-14 md:mt-14 sm:mt-14 mt-14 min-h-screen h-full w-full transform-none px-4 md:px-8 lg:px-16 py-12 md:py-24 bg-radial">
      
       <motion.section 
         id="Skills" 
-        className={`text-3xl sm:text-4xl md:text-xl lg:text-[2rem] font-semibold mb-8 md:mb-16 text-center 
-         text-neutral-50
-        `}
+        className={`text-3xl sm:text-4xl md:text-xl lg:text-[2rem] font-semibold mb-8 md:mb-16 text-center ${
+          isLightMode ? 'text-gray-900' : 'text-neutral-50'
+        }`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -61,19 +77,14 @@ export default function Skills({ isLightMode }) {
             <SkillItem icon={JS} label="JavaScript" isLightMode={isLightMode} />
             <SkillItem icon={PT} label="Python" isLightMode={isLightMode} />
             <SkillItem icon={JV} label="Java" isLightMode={isLightMode} />
-          <div className="xl:h-6">
             <SkillItem icon={CP} label="C++" isLightMode={isLightMode} />
-          </div>
           </SkillCard>
 
           <SkillCard title="Frontend Development" isLightMode={isLightMode}>
             <SkillItem icon={react} label="React" isLightMode={isLightMode} />
             <SkillItem icon={html} label="HTML" isLightMode={isLightMode} />
             <SkillItem icon={css} label="TailwindCSS" isLightMode={isLightMode} />
-            <div className="xl:h-6 ">
-               <SkillItem icon={RD} label="Redux" isLightMode={isLightMode} />
-            </div>
-           
+            <SkillItem icon={RD} label="Redux" isLightMode={isLightMode} />
           </SkillCard>
 
           <SkillCard title="Backend Development" isLightMode={isLightMode}>
@@ -116,6 +127,11 @@ export default function Skills({ isLightMode }) {
             <SkillItem icon={COLL} label="Collaboration" isLightMode={isLightMode} />
             <SkillItem icon={PB} label="Problem Solving" isLightMode={isLightMode} />
           </SkillCard>
+
+          <SkillCard title="Extra Skills" isLightMode={isLightMode}>
+            <SkillItem icon={DHIS2Icon} label="DHIS2" isLightMode={isLightMode} />
+            <SkillItem icon={PowerBIIcon} label="PowerBI" isLightMode={isLightMode} />
+          </SkillCard>
         </div>
       </motion.div>
     </section>
@@ -139,7 +155,7 @@ function SkillCard({ title, children, isLightMode }) {
         }`}>
           {title}
         </h1>
-        <div className="md:flex-row md:mt-20 lg:mt-40 xl:mt-0 flex justify-center items-center gap-4 sm:gap-6">
+        <div className="flex-1 flex flex-wrap justify-center items-center gap-4 sm:gap-6 w-full">
           {children}
         </div>
       </section>
@@ -148,17 +164,24 @@ function SkillCard({ title, children, isLightMode }) {
 }
 
 function SkillItem({ icon, label, isLightMode }) {
+  const isSvgComponent = typeof icon !== 'string';
   return (
     <motion.div 
-      className="flex flex-col items-center p-2 sm:p-3 w-[80px] md:w-fit md:h-[5vh]"
+      className="flex flex-col items-center p-2 sm:p-3 w-[80px] md:w-fit"
       whileHover={{ scale: 1.05 }}
     >
-      <img 
-        src={icon} 
-        alt={label} 
-        className="h-12 sm:h-16 md:h-10 w-auto object-contain"
-      />
-      <p className={`text-xs sm:text-sm md:text-base mt-2 text-center font-medium ${
+      {isSvgComponent ? (
+        <div className="h-12 sm:h-16 md:h-10 w-12 sm:w-16 md:w-10 flex items-center justify-center">
+          {icon}
+        </div>
+      ) : (
+        <img 
+          src={icon} 
+          alt={label} 
+          className="h-12 sm:h-16 md:h-10 w-auto object-contain"
+        />
+      )}
+      <p className={`text-xs sm:text-sm md:text-base mt-2 text-center font-medium whitespace-nowrap ${
         isLightMode ? 'text-gray-800' : 'text-neutral-50'
       }`}>
         {label}

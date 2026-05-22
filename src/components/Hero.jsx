@@ -17,7 +17,7 @@ const letter = {
   visible: { opacity: 1, y: 0 },
 };
 
-export default function Hero() {
+export default function Hero({ isLightMode }) {
   const [animationKey, setAnimationKey] = useState(0);
 
   useEffect(() => {
@@ -37,7 +37,9 @@ export default function Hero() {
         className="text-center w-full max-w-6xl relative z-10"
       >
         <div className="flex flex-col items-center hero-section">
-          <h1 className="text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white whitespace-nowrap">
+          <h1 className={`text-xl sm:text-4xl md:text-5xl lg:text-6xl font-bold whitespace-nowrap ${
+            isLightMode ? 'text-gray-900' : 'text-white'
+          }`}>
             Hey there, I'm{" "}
             <motion.span
               key={animationKey}
@@ -54,10 +56,14 @@ export default function Hero() {
             </motion.span>
           </h1>
 
-          <p className="mt-3 text-sm sm:text-base md:text-lg text-white/60 max-w-2xl mx-auto">
+          <p className={`mt-3 text-sm sm:text-base md:text-lg max-w-2xl mx-auto ${
+            isLightMode ? 'text-gray-600 font-medium' : 'text-white/60'
+          }`}>
             Full-Stack Developer | DevOps Engineer | CyberSecurity Specialist
           </p>
-          <p className="mt-2 text-xs sm:text-sm md:text-base text-white/50 max-w-2xl mx-auto">
+          <p className={`mt-2 text-xs sm:text-sm md:text-base max-w-2xl mx-auto ${
+            isLightMode ? 'text-gray-500' : 'text-white/50'
+          }`}>
             Building robust, scalable solutions that drive business growth
           </p>
 
@@ -72,36 +78,52 @@ export default function Hero() {
             </div>
           </div>
 
-          <div className="mt-8 sm:mt-12 text-white/90">
-            <label className="font-sans text-sm sm:text-base md:text-lg font-medium">
+          <div className={`mt-8 sm:mt-12 ${isLightMode ? 'text-gray-800' : 'text-white/90'}`}>
+            <label className="font-sans text-sm sm:text-base md:text-lg font-semibold">
               Follow Me On:
             </label>
             <div className="flex justify-center mt-3">
-              <div className="flex gap-3 sm:gap-4">
+              <div className="flex gap-3 sm:gap-4 text-white">
                 <button
                   onClick={() => window.open("https://www.instagram.com/lusper_mhango", "_blank")}
-                  className="rounded-lg hover:bg-[#009966] border p-1.5 sm:p-2 transition-colors"
+                  className={`rounded-lg hover:bg-[#009966] border p-1.5 sm:p-2 transition-colors hover:text-white ${
+                    isLightMode 
+                      ? 'border-gray-300 text-gray-700 hover:border-transparent' 
+                      : 'border-white/20 text-white/90'
+                  }`}
                   aria-label="Instagram"
                 >
                   <FaInstagram className="text-xl sm:text-2xl md:text-3xl" />
                 </button>
                 <button
                   onClick={() => window.open("https://www.linkedin.com/in/lusungumhango", "_blank")}
-                  className="rounded-lg hover:bg-[#009966] border p-1.5 sm:p-2 transition-colors"
+                  className={`rounded-lg hover:bg-[#009966] border p-1.5 sm:p-2 transition-colors hover:text-white ${
+                    isLightMode 
+                      ? 'border-gray-300 text-gray-700 hover:border-transparent' 
+                      : 'border-white/20 text-white/90'
+                  }`}
                   aria-label="LinkedIn"
                 >
                   <FaLinkedin className="text-xl sm:text-2xl md:text-3xl" />
                 </button>
                 <button
                   onClick={() => window.open("https://github.com/lusungu-skillset", "_blank")}
-                  className="rounded-lg hover:bg-[#009966] border p-1.5 sm:p-2 transition-colors"
+                  className={`rounded-lg hover:bg-[#009966] border p-1.5 sm:p-2 transition-colors hover:text-white ${
+                    isLightMode 
+                      ? 'border-gray-300 text-gray-700 hover:border-transparent' 
+                      : 'border-white/20 text-white/90'
+                  }`}
                   aria-label="GitHub"
                 >
                   <FaGithub className="text-xl sm:text-2xl md:text-3xl" />
                 </button>
                 <button
                   onClick={() => (window.location.href = "tel:0999916443")}
-                  className="rounded-lg hover:bg-[#009966] border p-1.5 sm:p-2 transition-colors"
+                  className={`rounded-lg hover:bg-[#009966] border p-1.5 sm:p-2 transition-colors hover:text-white ${
+                    isLightMode 
+                      ? 'border-gray-300 text-gray-700 hover:border-transparent' 
+                      : 'border-white/20 text-white/90'
+                  }`}
                   aria-label="Phone"
                 >
                   <FiPhoneCall className="text-xl sm:text-2xl md:text-3xl" />
