@@ -31,7 +31,7 @@ const projects = [
     title: "Pothole Reporter Frontend",
     subtitle:
       "GIS-based Next.js application\nVisualizing potholes on Google Maps",
-    tech: ["Next.js", "PostGIS", "Google Maps"],
+    tech: ["Next.js", "PostGIS", "Google Maps", "Leaflet"],
     icon: MapPin,
     repo: "https://github.com/lusungu-skillset/Pothole-Reporter-frontend",
     live: "https://pothole-reporter-frontend-eight.vercel.app/",
@@ -64,7 +64,7 @@ const projects = [
     title: "DHIS2 iCHIS Customized Application",
     subtitle:
       "Customized Integrated Community Health Information System (iCHIS) built on the DHIS2 platform.",
-    tech: ["DHIS2", "JavaScript", "React", "Web API"],
+    tech: ["DHIS2", "Kotlin", "DHIS-Capture App", "Web API", "IOT Sensor Integration", "Room Database"],
     icon: HeartPulse,
     repo: "https://github.com/MCHIHANA/DHIS2-iCHIS-CUSTOMIZED-APPLICATION.git",
   },
@@ -72,7 +72,7 @@ const projects = [
     title: "Maendeleo Agro Trade",
     subtitle:
       "Agro-ecommerce platform facilitating agricultural trade, supply chain tracking, and market access.",
-    tech: ["React", "Node.js", "MySQL", "TailwindCSS"],
+    tech: ["Next.js", "Youtube API", "Resend", "TailwindCSS"],
     icon: Sprout,
     repo: "https://github.com/lusungu-skillset/Maendeleo-Agro-Trade.git",
     live: "https://maendeleo-agro-trade.vercel.app/",
@@ -81,15 +81,15 @@ const projects = [
     title: "MANEB Prep Backend",
     subtitle:
       "Backend API system for national examination preparation platform, providing testing and progress analytics.",
-    tech: ["Node.js", "Express", "PostgreSQL", "JWT"],
+    tech: ["NestJS", "Supabase", "JWT"],
     icon: BrainCircuit,
     repo: "https://github.com/lusungu-skillset/manebprep.git",
   },
   {
     title: "MANEB Prep Frontend",
     subtitle:
-      "Interactive exam preparation client-side application with practice exams, timers, and performance dashboards.",
-    tech: ["React", "TailwindCSS", "Redux Toolkit", "Chart.js"],
+      "Interactive PWA exam preparation client-side application with practice exams, timers, and performance dashboards.",
+    tech: ["Next.js", "TailwindCSS", "ShadCN UI", "PWA"],
     icon: Trophy,
     repo: "https://github.com/lusungu-skillset/maneprep_frontend.git",
     live: "https://maneprep.vercel.app/",
@@ -98,7 +98,7 @@ const projects = [
     title: "Velori Finance (Client Project)",
     subtitle:
       "Professional finance and advisory services web application. Scalable, fast, and optimized for business growth.",
-    tech: ["React", "TailwindCSS", "Framer Motion", "SEO"],
+    tech: ["Next.js", "TailwindCSS", "Framer Motion", "SEO", "Supabase", "Cloudinary"],
     icon: TrendingUp,
     repo: "https://github.com/techpact-team/VELORI_WEBSITE.git",
     live: "https://velorifinances.com",

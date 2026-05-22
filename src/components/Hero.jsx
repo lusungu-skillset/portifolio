@@ -59,7 +59,7 @@ export default function Hero({ isLightMode }) {
           <p className={`mt-3 text-sm sm:text-base md:text-lg max-w-2xl mx-auto ${
             isLightMode ? 'text-gray-600 font-medium' : 'text-white/60'
           }`}>
-            Full-Stack Developer | DevOps Engineer | CyberSecurity Specialist
+            Full-Stack Developer | DevOps Engineer | Tech Enthusiast
           </p>
           <p className={`mt-2 text-xs sm:text-sm md:text-base max-w-2xl mx-auto ${
             isLightMode ? 'text-gray-500' : 'text-white/50'
